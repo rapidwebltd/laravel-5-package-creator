@@ -4,6 +4,6 @@ This Laravel package adds commands to Laravel's `artisan` tool. These commands a
 
 *Please note that this is in very early development and requires some tidying up and testing. It may not work in all configurations.*
 
-## Licesnse
+## License
 
 MIT

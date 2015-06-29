@@ -1,0 +1,30 @@
+<?php namespace {{VENDOR NAME}}\{{PACKAGE NAME}}\Controllers;
+
+use App\Http\Controllers\Controller;
+use {{VENDOR NAME}}\{{PACKAGE NAME}}\Models\{{MODEL NAME}};
+
+class {{PACKAGE NAME}}Controller extends Controller
+{
+	public function __construct()
+	{
+
+	}
+	
+	public function o_package_test_controller()
+	{
+		
+		echo '<br />Controller worked';
+		die;
+		
+	}
+	
+	public function o_package_test_model()
+	{
+		
+		$all{{MODEL NAME}}s = {{MODEL NAME}}::all();
+		
+		return view('{{PACKAGE NAME}}::{{VIEW NAME}}')->with('all{{MODEL NAME}}s',$all{{MODEL NAME}}s);
+		
+	}
+
+}

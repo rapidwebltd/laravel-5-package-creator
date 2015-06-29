@@ -1,0 +1,35 @@
+<?php
+
+/*
+ |--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register all of the routes for an application.
+| It's a breeze. Simply tell Laravel the URIs it should respond to
+| and give it the Closure to execute when that URI is requested.
+|
+*/
+
+
+Route::get('test-routes-work-{{VENDOR NAME LOWER}}', ['as' => 'test-page', function()
+{
+
+	echo 'Hello world - {{VENDOR NAME}}';
+	die;
+	
+}]);
+
+//inline namespacing, use group example below instead
+//Route::get('test-controller-works', array( 'as'=>'test-controller-works','uses' => '{{VENDOR NAME}}\{{PACKAGE NAME}}\Controllers\{{PACKAGE NAME}}Controller@o_package_test'));
+
+Route::group(array('namespace' => '{{VENDOR NAME}}\{{PACKAGE NAME}}\Controllers'), function()
+{
+	
+	Route::get('test-controller-works-{{VENDOR NAME LOWER}}', array('as' => 'test-controller-works', 'uses' => '{{PACKAGE NAME}}Controller@o_package_test_controller'));
+	
+	Route::get('test-model-works-{{VENDOR NAME LOWER}}', array('as' => 'test-model-works', 'uses' => '{{PACKAGE NAME}}Controller@o_package_test_model'));
+	
+	Route::get('test-events-works-{{VENDOR NAME LOWER}}', array('as' => 'test-events-works', 'uses' => '{{PACKAGE NAME}}Controller@o_event_test'));
+
+});

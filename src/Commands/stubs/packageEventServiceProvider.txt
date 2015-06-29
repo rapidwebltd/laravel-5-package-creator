@@ -1,0 +1,48 @@
+<?php namespace {{VENDOR NAME}}\{{PACKAGE NAME}};
+
+use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
+use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+
+class EventServiceProvider extends ServiceProvider {
+
+	/**
+	 * The event handler mappings for the application.
+	 *
+	 * @var array
+	 */
+	protected $listen = [
+			'{{VENDOR NAME}}\{{PACKAGE NAME}}\Events\UserLoggedIn' => [
+					'{{VENDOR NAME}}\{{PACKAGE NAME}}\Handlers\Events\UserLoggedInConfirmation',
+			],
+	];
+
+	/**
+	 * Register any other events for your application.
+	 *
+	 * @param  \Illuminate\Contracts\Events\Dispatcher  $events
+	 * @return void
+	 */
+	public function boot(DispatcherContract $events)
+	{
+		
+		parent::boot($events);
+		
+		/*
+		Below works as well if you dont want to create seperate listener files for every listener
+		\Event::listen('{{VENDOR NAME}}\{{PACKAGE NAME}}\Events\UserLoggedIn', function($event)
+		{
+			// Handle the event...
+			return 'hello world';
+				
+		});*/
+		
+
+		//
+	}
+	
+	public function register()
+	{
+		//
+	}
+
+}

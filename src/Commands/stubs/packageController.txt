@@ -1,0 +1,20 @@
+<?php namespace {{VENDOR NAME}}\{{PACKAGE NAME}}\Controllers;
+
+use App\Http\Controllers\Controller;
+
+class {{PACKAGE NAME}}Controller extends Controller
+{
+	public function __construct()
+	{
+
+	}
+	
+	public function o_package_test_controller()
+	{
+		
+		echo '<br />Controller worked';
+		die;
+		
+	}
+
+}
